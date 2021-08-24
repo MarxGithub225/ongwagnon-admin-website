@@ -1,0 +1,29 @@
+<div class="createAdministrator">
+    <form autocomplete="off" >
+        <div class="row">
+            <div class="col-md-6 col-sm-12">
+                <mat-form-field class="fullwidth" appearance="fill">
+                    <mat-label>Nom</mat-label>
+                    <input [formControl]="firstname" matInput>
+                    <mat-error>Champs requis</mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-6 col-sm-12">
+                <mat-form-field class="fullwidth" appearance="fill">
+                    <mat-label>Prénom (s)</mat-label>
+                    <input [formControl]="lastname" matInput>
+                    <mat-error>Champs requis</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+
+
+        <div class="stepButtons">
+            <div class="button"> &nbsp;</div>
+            <div class="button">
+                <button mat-flat-button color = "primary" type="button" (click)="editAdmin()">Sauvegarder</button>
+            </div>
+        </div>
+    </form>
+</div>

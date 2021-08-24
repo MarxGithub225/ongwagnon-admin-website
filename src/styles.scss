@@ -1,0 +1,161 @@
+
+@import '~@angular/material/theming';
+@import './assets/scss/custom-palet.scss';
+
+
+// custom Angular material style
+@include mat-core();
+$ongwagnon-admin-website-primary: mat-palette($primary-palette);
+$ongwagnon-admin-website-accent: mat-palette($secondary-palette);
+$ongwagnon-admin-website-warn: mat-palette($mat-red);
+$ongwagnon-admin-website-theme: mat-light-theme($ongwagnon-admin-website-primary, $ongwagnon-admin-website-accent, $ongwagnon-admin-website-warn);
+@include angular-material-theme($ongwagnon-admin-website-theme);
+
+@font-face {
+  font-family: eighthOne;
+  src: url(assets/font/EightOne.ttf) format("opentype");
+}
+@font-face {
+  font-family: nimbus;
+  src: url(assets/font/Nimbus.ttf) format("opentype");
+}
+
+html, body { height: 100%; background-color: #f3f5f9;}
+body { 
+    margin: 0; 
+    font-family: roboto, "Helvetica Neue", sans-serif; 
+    font-size:  11px;
+    font-weight: 400;
+    color: #3a3a3a;
+    background: #f8f8f8;
+}
+
+.custom-dialog-container {
+  overflow: auto;
+  &::-webkit-scrollbar {
+                width: 5px;
+                height: 6px;
+  }
+  
+  &::-webkit-scrollbar-button:start:decrement,
+  &::-webkit-scrollbar-button:end:increment {
+      display: block;
+      height: 10px;
+  }
+  
+  &::-webkit-scrollbar-button:vertical:increment {
+      background-color: transparent;
+  }
+  
+  &::-webkit-scrollbar-track-piece {
+      background-color: transparent;
+      -webkit-border-radius: 3px;
+  }
+  
+  &::-webkit-scrollbar-thumb:vertical {
+      height: 50px;
+      background-color: transparent;
+      -webkit-border-radius: 3px;
+  }
+  
+  &::-webkit-scrollbar-thumb:horizontal {
+      width: 5px;
+      background-color: transparent;
+      -webkit-border-radius: 3px;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+      border-radius: 7px !important;
+      height: 45px !important;
+      width: 15px !important;
+      box-shadow: inset 0 0 6px #0000001a !important;
+      background-color: #156132 !important;
+      cursor: pointer;
+  }
+}
+
+.custom-sheet-container {
+  
+  overflow: auto;
+  &::-webkit-scrollbar {
+      width: 5px;
+      height: 6px;
+  }
+  
+  &::-webkit-scrollbar-button:start:decrement,
+  &::-webkit-scrollbar-button:end:increment {
+      display: block;
+      height: 10px;
+  }
+  
+  &::-webkit-scrollbar-button:vertical:increment {
+      background-color: transparent;
+  }
+  
+  &::-webkit-scrollbar-track-piece {
+      background-color: transparent;
+      -webkit-border-radius: 3px;
+  }
+  
+  &::-webkit-scrollbar-thumb:vertical {
+      height: 50px;
+      background-color: transparent;
+      -webkit-border-radius: 3px;
+  }
+  
+  &::-webkit-scrollbar-thumb:horizontal {
+      width: 5px;
+      background-color: transparent;
+      -webkit-border-radius: 3px;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+      border-radius: 7px !important;
+      height: 45px !important;
+      width: 15px !important;
+      box-shadow: inset 0 0 6px #0000001a !important;
+      background-color: #156132 !important;
+      cursor: pointer;
+  }
+}
+
+.full-page-module {
+  width: 100%;
+  height: calc(100% - 80px);
+  position: fixed;
+  right: 0px;
+  bottom: 0px;
+  padding-left: 30px;
+  padding-top: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+  overflow: auto;
+}
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+button, button:focus {
+  outline: none;
+}
+
+.fullwidth {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .full-page-module {
+        width: 100%;
+        position: unset;
+        padding-left: 30px;
+        padding-top: 30px;
+        padding-right: 30px;
+        padding-bottom: 30px;
+    }
+}

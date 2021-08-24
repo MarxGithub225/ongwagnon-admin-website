@@ -1,0 +1,69 @@
+:host {
+    right: 0;
+    left: auto;
+    z-index: 500;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    transition: all 1s;
+    width: 285px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 1px 9px -3px rgb(0 0 0 / 25%);
+    box-shadow: 0 1px 9px -3px rgb(0 0 0 / 25%);
+    padding: 15px;
+}
+
+.userProfile {
+    .userName {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        span {
+            &:first-child {margin-right: 10px;}
+            &:last-child {font-size: 14px; font-weight: bold;}
+        }
+    }
+    .userCompany {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        span {
+            &:first-child {margin-right: 10px;}
+            &:last-child {color: #156132; font-weight: bold;font-size: 18px; text-transform: uppercase;}
+        }
+        
+    }
+    .userEmail {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        span {
+            &:first-child {margin-right: 10px;}
+            &:last-child {font-size: 14px; font-weight: bold;}
+        }
+    }
+}
+
+.profileMenu {
+    button {display: block; width: 100%;}
+    .menuItem {
+        margin-bottom: 25px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        cursor: pointer;
+        div {
+            &:first-child {
+                margin-right: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color : #b5b5c3;
+            }
+
+            &:last-child {font-size: 14px; font-weight: bold; color: #181c32;}
+        }
+        
+    }
+}
+

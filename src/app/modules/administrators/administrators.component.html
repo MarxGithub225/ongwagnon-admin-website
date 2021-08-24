@@ -1,0 +1,76 @@
+<div class="full-page-module">
+    <div class="adminsContainer">
+        <div class="header">
+            <span>Les administrateurs</span>
+            <div class="add"
+            (click) = " openModal ('500', 'px', 'createAdmin', 'Ajouter un administrateur', '') "
+            >
+                <mat-icon>add</mat-icon>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-2 col-sm-6" *ngFor = "let administrator of moduleState.admins; let i = index">
+                <a
+                [matTooltip]="administrator.email"
+                >
+                
+                    <div class="adminItem" 
+                    [style.background-image]="'url(assets/imgs/admin_icon.png)'"
+                    [class.active] = "userState.email === administrator.email"
+                    >
+
+                        <div class="adminBackOverlay">
+                            <div class="menu" *ngIf = "userState.level === '0' && userState.email !== administrator.email">
+
+                                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                                    <mat-icon>more_vert</mat-icon>
+                                </button>
+
+                                <mat-menu #menu="matMenu">
+                                    
+
+                                    <button mat-menu-item 
+                                    (click) = " openModal ('500', 'px', 'deleteAdmin', 'Supprimer cet administrateur ?', administrator) "
+                                    >
+                                        <mat-icon>delete</mat-icon>
+                                        <span>Supprimer</span>
+                                  </button>
+
+                                <button mat-menu-item *ngIf = "administrator.state === '1'"
+                                (click)="editAdminState(administrator, 0)"
+                                >
+                                    <span  
+                                    title="Désactiver" >
+                                        <mat-icon style="color: #008080;">toggle_on</mat-icon> 
+                                    </span>
+
+                                    <span>Désactiver</span>
+                                </button>
+
+                                <button mat-menu-item *ngIf = "administrator.state === '0'"
+                                (click)="editAdminState(administrator, 1)"
+                                >
+                                    <span 
+                                    title="Activer"
+                                    >
+                                        <mat-icon style="color: #dfca0e;">toggle_off</mat-icon> 
+                                    </span>
+
+                                    <span>Activer</span>
+                                </button>
+
+                                    
+                                </mat-menu>
+                            </div>
+                            <div class="adminTitle">
+                                {{administrator.email}}
+                            </div>
+                        </div>
+                    </div>
+                </a
+                >
+            </div>
+        </div>
+    </div>
+</div>

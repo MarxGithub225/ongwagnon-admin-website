@@ -1,0 +1,105 @@
+form {
+    .row {
+        margin-bottom: 15px;
+    }
+}
+
+.error {
+    padding: 10px 0;
+    color: #f44336;
+    font-family: 'nimbus', 'arial', sans-serif;
+    font-weight: bold;
+}
+
+.full-page-module {
+    background-color: #fff;
+
+    .imagesArea {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+
+        .imageItem {
+            width: 120px;
+            height: 150px;
+            background-color: #a3a1a1;
+            border-radius: 4px;
+            margin-right: 25px;
+            background-position: center;
+            background-size: cover;
+            margin-bottom: 25px;
+        }
+        button {
+            margin-right: 25px;
+            cursor: pointer;
+            box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12);
+            background-color: rgba(0, 0, 0, 0.12);
+            color: rgba(0, 0, 0, 0.26);
+        }
+        button:focus {
+            outline: none;
+        }
+
+        
+    }
+.imageTitle, .label {
+            font-size: 13px;
+            font-weight: bold;
+    }
+.img.source-image {
+        width: 100% !important;
+        height: auto !important;
+    }
+.croppingArea {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 15px;
+
+        .crropedImage {
+            width: 200px;
+            height: 200px;
+            margin-left: 25px;
+
+            img {
+                width: 100% !important;
+                height: auto !important;
+                border-radius: 3px;
+            }
+        }
+
+        image-cropper {
+            width: 70% !important;
+            height: 500px !important;
+        }
+    }
+    .imageItem .imageRemove{
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 20px;
+        height: 30px;
+        padding: 5px; 
+        color: #ffffff;
+        background-color: #314897;
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        cursor: pointer;
+        transition: transform .2s;
+      }
+      
+      .imageItem .imageRemove:hover{
+        background-color: #E74E1B;
+        -ms-transform: scale(1.5); /* IE 9 */
+        -webkit-transform: scale(1.5); /* Safari 3-8 */
+        transform: scale(1.5); 
+      }
+
+      .pushVariables {
+          margin-top: 15px;
+      }
+}

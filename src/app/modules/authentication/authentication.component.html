@@ -1,0 +1,17 @@
+<div *ngIf = "view === 'login' ">
+    <app-login
+    (setView)="setView($event)"
+    ></app-login>
+</div>
+
+<div *ngIf = "view === 'register' ">
+    <app-register
+    (setView)="setView($event)"
+    ></app-register>
+</div>
+
+<div *ngIf = "view === 'passforgot' ">
+    <app-passforgot
+    (setView)="setView($event)"
+    ></app-passforgot>
+</div>

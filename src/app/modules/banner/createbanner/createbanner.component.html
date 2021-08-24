@@ -1,0 +1,47 @@
+<div class="createCountry">
+    <form autocomplete="off" >
+        <div class="row">
+            <div class="col-9">
+                <mat-form-field class="fullwidth" appearance="fill">
+                    <mat-label>Nom de l'oeuvre</mat-label>
+                    <textarea [formControl]="note" matInput></textarea>
+                    <mat-error>Champs requis</mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="col-3">
+                <mat-form-field class="fullwidth" appearance="fill">
+                    <mat-label>Prix de l'oeuvre</mat-label>
+                    <textarea [formControl]="price" matInput></textarea>
+                    <mat-error>Champs requis</mat-error>
+                </mat-form-field>
+            </div>
+
+        </div>
+
+
+        
+
+        <div class="imagesArea">
+        
+            <div class="imageItem" [style.background-image]="'url(' + image + ')'">
+            </div>
+            <button mat-mini-fab (click)="uploadFile()" type="button">
+                <mat-icon>add</mat-icon>
+            </button>
+        </div>
+
+        
+        <div class="hideInput">
+            <input type="file" accept="image/*"  onChange={this.onImageChange} id="imageInput" (change)="fileChangeEvent($event)" style="display: none;" />
+            <label for="imageInput"><i className ="fas fa-"></i></label>
+        </div>
+
+        <div class="stepButtons">
+            <div class="button"> &nbsp;</div>
+            <div class="button">
+                <button mat-flat-button color = "primary" type="button" (click)="createCountry()">Enregistrer</button>
+            </div>
+        </div>
+    </form>
+</div>

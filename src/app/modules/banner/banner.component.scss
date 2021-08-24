@@ -1,0 +1,148 @@
+
+.countryContainer {
+
+    .header {
+        font-size: 16px;
+        font-weight: bold;
+        color: #181c32;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        .add {
+            margin-left: 25px;
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            background-color: #156132;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            color: #FFFFFF;
+            box-shadow: 0 2px 1px rgb(0 0 0 / 20%);
+
+            cursor: pointer;
+        }
+    }
+    
+    .countriesTab {
+        position: fixed;
+        bottom: 0;
+        left: 30%;
+        width: 40%;
+        height: calc(100% - 160px);
+        overflow-y: auto;
+        box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+
+        padding: 15px;
+        .bannerItem {
+            width: 100%;
+            height: 150px;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            box-shadow: 0 2px 1px rgb(0 0 0 / 20%);
+
+            cursor: pointer;
+            margin-bottom: 15px;
+            
+            .toolBar {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .notApproved {
+                    background-color: #FFFFFF;
+                    color:#800900;
+                    padding: 5px;
+                    font-weight: bold;
+                }
+
+                .approved {
+                    background-color: #FFFFFF;
+                    color:#008080;
+                    padding: 5px;
+                    font-weight: bold;
+                }
+
+
+                .green {
+                    color: #008080;
+                    cursor: pointer;
+                }
+                .red {
+                    color:#800900;
+                    cursor: pointer;
+                }
+
+                .yellow {
+                    color:#dfca0e;
+                    cursor: pointer;
+                }
+
+                .white {
+                    color:#FFFFFF;
+                    cursor: pointer;
+                }
+            }
+            .actionsButton {
+                position: absolute;
+                right: 0;
+                top: 0; 
+
+                color: #FFFFFF;
+            }
+
+            button {
+                color: #FFFFFF;
+            }
+
+            .stateButton {
+                margin-top: 15px;
+                background: rgba(0, 0, 0, .5);
+            }
+            .adminBackOverlay {
+                position: relative;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, .5);
+
+                padding: 10px;
+
+                display: flex;
+                justify-content: flex-end;
+                align-items: flex-start;
+                flex-direction: column;
+
+                .note {
+                    width: 100%;
+                    padding: 15px;
+                    color: #FFFFFF;
+                    font-weight: bold;
+                    font-size: 14px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    background: rgba(0, 0, 0, .5);
+                }
+
+                .infos {
+                    color: #FFFFFF;
+                    font-weight: bold;
+                    font-size: 14px;
+                }
+
+
+
+            }
+        }
+
+        
+    }
+    
+
+}

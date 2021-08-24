@@ -1,0 +1,34 @@
+<div class="sheetTitle">
+    {{sheetTitle}}
+</div>
+
+<div class="sheetContainer" *ngIf = " sheetRoot === 'addPromotion' "> 
+    <app-addpromotion
+    [colorSelected] = "sheetDatas"
+    ></app-addpromotion>
+</div>
+
+<div class="sheetContainer" *ngIf = " sheetRoot === 'seeVariables' "> 
+    <app-showvariables
+    [variableSelected] = "sheetDatas"
+    ></app-showvariables>
+</div>
+
+<div class="sheetContainer" *ngIf = " sheetRoot === 'editImages' "> 
+    <app-editimages
+    [imageSelected] = "sheetDatas"
+    ></app-editimages>
+</div>
+
+
+<div class="sheetContainer" *ngIf = " sheetRoot === 'editVariables' "> 
+    <app-editvariables
+    [variableSelected] = "sheetDatas"
+    ></app-editvariables>
+</div>
+
+<div class="sheetContainer" *ngIf = " sheetRoot === 'deleteProductColor' "> 
+    <app-deleteproperty
+    [variableSelected] = "sheetDatas"
+    ></app-deleteproperty>
+</div>

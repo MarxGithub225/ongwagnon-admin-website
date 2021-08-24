@@ -1,0 +1,22 @@
+<div class="userProfile">
+    <div class="userName"><span><mat-icon>person_outline</mat-icon></span> 
+        <span *ngIf = "userState.level === '0'">Administrateur</span>
+        <span *ngIf = "userState.level === '1'">Modérateur</span>
+    </div>
+    <div class="userEmail"><span><mat-icon>mail_outline</mat-icon> </span> <span>{{userState.email}}</span></div>
+</div>
+
+<hr>
+
+<div class="profileMenu">
+
+    <div class="menuItem" (click) = "resetPassword (userState)"> 
+        <div class="icon">
+            <mat-icon>password</mat-icon>
+        </div>
+        <div class="label">Réinitialiser votre mot de passe</div>
+    </div>
+
+
+    <button mat-flat-button color = "primary" type="button" (click) = "logout ()"> Déconnexion</button>
+</div>

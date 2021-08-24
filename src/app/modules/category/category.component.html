@@ -1,0 +1,82 @@
+<div class="full-page-module">
+    <div class="countryContainer">
+
+
+       <div class="countriesTab">
+        <div class="row">
+            <div class="col-md-4 col-sm-6" *ngFor = "let administrator of moduleState.categories; let i = index">
+                <a
+                [matTooltip]="administrator.email"
+                >
+                
+                    <div class="adminItem" 
+                    [style.background-image]="'url(assets/imgs/admin_icon.png)'"
+                    (click) = "selectOrder (administrator)"
+                    >
+    
+                        <div class="adminBackOverlay">
+                            
+                            <div class="adminTitle">
+                                <p><mat-icon>person_outline</mat-icon> {{administrator.lastname}} {{administrator.firstname}} </p>
+
+                                <p>
+                                    <mat-icon>mail</mat-icon>
+                                    {{administrator.email}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a
+                >
+            </div>
+        </div>
+            
+       </div>
+
+       <div class="citiesTab">
+        <table class="table" style="width: 100%;" *ngIf = "isSelected">
+            <thead >
+                <th>Membre</th>
+                <th>E-mail</th>
+                <th>Téléphone</th>
+                <th>Pays</th>
+                <th>Ville</th>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>{{orderSelected.civility}} {{orderSelected.lastname}} {{orderSelected.firstname}}</td>
+                    <td>{{orderSelected.email}}</td>
+                    <td>{{orderSelected.phone}}</td>
+                    <td>{{orderSelected.country}}</td>
+                    <td>{{orderSelected.city}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="table" style="width: 100%;" *ngIf = "isSelected">
+            <thead >
+                <th >Djob</th>
+                <th>Etudes</th>
+                <th>Expériences</th>
+                <th>Domaine</th>
+                <th>Université</th>
+                <th>Promotion</th>
+                <th>Type de membre</th>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>{{orderSelected.djob}}</td>
+                    <td>{{orderSelected.studies}}</td>
+                    <td>{{orderSelected.experience}}</td>
+                    <td>{{orderSelected.domain}}</td>
+                    <td>{{orderSelected.university}}</td>
+                    <td>{{orderSelected.promotion}}</td>
+                    <td>{{orderSelected.type}}</td>
+                </tr>
+            </tbody>
+        </table>
+       </div>
+    </div>
+</div>

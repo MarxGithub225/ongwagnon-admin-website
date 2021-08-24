@@ -1,0 +1,35 @@
+.modalTitle {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-size:  20px;
+}
+
+.menu {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    .menuItem {
+        width: 50%;
+        padding: 15px;
+        background-color: #fff;
+        box-shadow: 0 2px 1px rgb(0 0 0 / 20%);
+        color: #156132;
+        cursor: pointer;
+        font-size: 17px;
+        font-weight: bold;
+    }
+
+    .active {
+        width: 50%;
+        padding: 15px;
+        background-color: #156132;
+        box-shadow: 0 2px 1px rgb(0 0 0 / 20%);
+        cursor: pointer;
+        color: #fff;
+        font-size: 17px;
+        font-weight: bold;
+    }
+}

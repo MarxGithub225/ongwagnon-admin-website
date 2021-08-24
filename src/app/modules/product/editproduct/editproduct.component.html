@@ -1,0 +1,75 @@
+<form autocomplete="off" >
+    <div class="row">
+        <div class="col-12">
+            <mat-form-field class="fullwidth" appearance="fill">
+                <mat-label>Titre du produit</mat-label>
+                <input [formControl]="title" matInput>
+                <mat-error>Champs requis</mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="label">Description du produit</div>
+            <angular-editor
+            [placeholder]="'Entrez votre description ici...'"
+            [formControl]="description"
+            [config]="editorConfig"></angular-editor>
+            <div class="error"> {{errMessage}} </div>
+        </div>
+    </div>
+
+    
+    <div class="imageTitle">Ajouter une ou plusieurs images (6 images au maximum)</div>
+    <hr>
+    
+
+    <div class="croppingArea" *ngIf = "imageChangedEvent">
+        <image-cropper
+            [imageChangedEvent]="imageChangedEvent"
+            [maintainAspectRatio]="true"
+            [aspectRatio]="1 / 1"
+            [resizeToWidth]="400"
+            [resizeToHeight]="400"
+            [cropperMinWidth]="128"
+            format="png"
+            (imageCropped)="imageCropped($event)"
+            (imageLoaded)="imageLoaded()"
+            (cropperReady)="cropperReady()"
+            (loadImageFailed)="loadImageFailed()"
+        ></image-cropper>
+        <div class="crropedImage">
+            <img [src]="croppedImage" />
+            <button mat-button (click) = "pushImage ()">Ajouter</button>
+        </div>
+        
+    </div>
+
+    <div class="imagesArea">
+        
+        <div class="imageItem" *ngFor="let img of images" [style.background-image]="'url(' + img + ')'">
+            <div class="imageRemove" (click)="removeImage(img)" title="Retirer l'image"> x </div>
+        </div>
+        <div class="imageItem" *ngFor="let img of imagesData" [style.background-image]=" 'url('  + baseUrl + img.link + ')' ">
+            <div class="imageRemoveDatas" *ngIf = "imagesData.length > 1 || images.length > 0" (click)="deleteImage(img)" title="Retirer l'image"> x </div>
+        </div>
+        <button mat-mini-fab (click)="uploadFile()" *ngIf = "images.length + imagesData.length < 6">
+            <mat-icon>add</mat-icon>
+        </button>
+    </div>
+    
+    <div class="hideInput">
+        <input type="file" accept="image/*"  onChange={this.onImageChange} id="imageInput" (change)="fileChangeEvent($event)" style="display: none;" />
+        <label for="imageInput"><i className ="fas fa-"></i></label>
+    </div>
+
+    
+
+    <div class="stepButtons">
+        <div class="button"> &nbsp;</div>
+        <div class="button">
+            <button mat-flat-button color = "primary" type="button" (click)="createCountry()">Enregistrer</button>
+        </div>
+    </div>
+</form>

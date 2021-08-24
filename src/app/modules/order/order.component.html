@@ -1,0 +1,81 @@
+<div class="full-page-module">
+    <div class="countryContainer">
+
+        <div class="header">
+            <span>Les dons</span>
+            
+        </div>
+        <hr>
+
+        
+
+        <div class="ordersDatas">
+
+            <p class="note"  *ngIf = "moduleState.orders.length === 0">Aucun don pour le moment</p>
+
+            <div class="row">
+                <div class="col-md-12" *ngFor = "let a of moduleState.orders | filter:searchText">
+                    <div class="productItem" 
+
+                    (click) = "selectOrder (a)"
+                    >
+                        
+    
+                        <div class="productBackOverlay">
+                            
+                            <div class="productTitle">
+                                <p><mat-icon>person_outline</mat-icon> {{a.lastname}} {{a.firstname}} </p>
+                                <p><mat-icon>textsms</mat-icon> <em>{{a.type}}</em> </p>
+                                <p>{{a.date | date}}</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="orderDetails">
+            <p class="note">Les détails s'afficheront ici</p>
+
+            <table class="table" style="width: 100%;" *ngIf = "isSelected">
+                <thead >
+                    <th>Donateur</th>
+                    <th>E-mail</th>
+                    <th>Téléphone</th>
+                    <th>Pays</th>
+                    <th>Ville</th>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>{{orderSelected.lastname}} {{orderSelected.firstname}}</td>
+                        <td>{{orderSelected.email}}</td>
+                        <td>{{orderSelected.phone}}</td>
+                        <td>{{orderSelected.country}}</td>
+                        <td>{{orderSelected.city}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="table" style="width: 100%;" *ngIf = "isSelected">
+                <thead >
+                    <th style="width: 50%;">Type de don</th>
+                    <th>Montant</th>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>{{orderSelected.type}}</td>
+                        <td>{{orderSelected.amount}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            
+        </div>
+
+        
+    </div>
+</div>

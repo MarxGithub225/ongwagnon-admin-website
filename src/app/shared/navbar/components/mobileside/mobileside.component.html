@@ -1,0 +1,34 @@
+<div class="mobileNavigation">
+    <div class="mobileLogo">
+        <a href="">
+            <img src=".../../../../../../../assets/imgs/icon.png" alt="">
+        </a>
+    </div>
+
+    <div class="navMenu">
+        <div 
+        *ngFor = "let menu of appConfig.navBarConfig.menus"
+        
+        [id]="menu.route"
+        class="menu-item" 
+        >
+            <a 
+            [routerLink]="[menu.route]"
+            class="menu-link">
+                {{menu.display}}l
+            </a>
+        </div>
+    </div>
+
+    <div class="bottomMenu">
+
+       
+        <div 
+        class="topBarItem" 
+        >
+            <a ><mat-icon >logout</mat-icon> <span>Déconnexion</span></a>
+            
+        </div>
+        
+    </div>
+</div>

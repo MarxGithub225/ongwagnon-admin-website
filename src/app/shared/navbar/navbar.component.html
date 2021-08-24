@@ -1,0 +1,69 @@
+<div class="navHeader">
+    <div class="headerMenu">
+        <div class="headerLogo">
+            <a href="">
+                <img src=".../../../../../assets/imgs/icon.png" alt="">
+            </a>
+        </div>
+
+        <div class="navMenu">
+            <div 
+            *ngFor = "let menu of appConfig.navBarConfig.menus"
+            
+            [id]="menu.route"
+            class="menu-item" 
+            >
+                <a 
+                [routerLink]="[menu.route]"
+                class="menu-link"
+                *ngIf = " menu.route !== 'addproduct' "
+                >
+                    {{menu.display}}
+                </a>
+
+                <a 
+                [routerLink]="[menu.route]"
+                class="menu-link-addproduct"
+                *ngIf = " menu.route === 'addproduct' "
+                >
+                    <mat-icon>{{menu.icon}}</mat-icon>
+                    {{menu.display}}
+                </a>
+            </div>
+            
+        </div>
+    </div>
+    <div class="topBar">
+        <div 
+        *ngFor = "let menu of appConfig.navBarConfig.topBar" 
+        class="topBarItem" 
+        >
+            <a *ngIf = "menu.route !== 'profil' "><mat-icon  [id]="menu.route + '-mobile' + '-child'">{{menu.icon}}</mat-icon></a>
+            
+            <span 
+            *ngIf = "menu.route === 'profil' "
+            (click) = "activeUserSide ()"
+            >
+                <mat-icon *ngIf = "menu.route === 'profil' " [id]="menu.route + '-mobile' + '-child'">{{menu.icon}}</mat-icon>
+            </span>
+        </div>
+    </div>
+</div>
+
+
+<div class="mobileNav">
+    <!-- menu -->
+    <div class="navbar-menus" (click)="menuActive()">
+        <mat-icon>menu</mat-icon>
+    </div>
+
+</div>
+
+<app-profilside [@slideInOut]="menuState" ></app-profilside>
+<app-mobileside [@slideInOut]="mobileMenuState" ></app-mobileside>
+
+<div
+(click) = "unActiveUserSide ()"
+class="hideUserSide" *ngIf = "moduleState.userSideActive">
+    <mat-icon>close</mat-icon>
+</div>

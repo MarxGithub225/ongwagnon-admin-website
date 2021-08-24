@@ -1,0 +1,100 @@
+<div class="modalTitle">
+    {{modalTitle}}
+</div>
+
+
+<div class="modalContainer" *ngIf = " modalRoot === 'editAdmin' "> 
+    <app-editadministrator
+    [datas] = "modalDatas"
+    ></app-editadministrator>
+</div>
+
+<div class="modalContainer" *ngIf = " modalRoot === 'deleteAdmin' "> 
+    <app-deleteadministrator
+    [datas] = "modalDatas"
+    ></app-deleteadministrator>
+</div>
+
+<div class="modalContainer" *ngIf = " modalRoot === 'createAdmin' "> 
+    <app-createadministrator
+    [datas] = "modalDatas"
+    ></app-createadministrator>
+</div>
+
+<div class="modalContainer" *ngIf = " modalRoot === 'createCategory' "> 
+    <div class="menu">
+        <div class="menuItem"
+        *ngFor = "let m of menus"
+        (click) = "active = m.id"
+        [class.active] = "active === m.id"
+        >
+            {{m.title}}
+        </div>
+    </div>
+    <app-createcategory
+    *ngIf = "active === 0"
+    [datas] = "modalDatas"
+    ></app-createcategory>
+
+    <app-createsubcategory
+    *ngIf = "active === 1"
+    [datas] = "modalDatas"
+    ></app-createsubcategory>
+</div>
+
+
+<div class="modalContainer" *ngIf = " modalRoot === 'deleteCategory' "> 
+    <app-deletecategory
+    [datas] = "modalDatas"
+    ></app-deletecategory>
+</div>
+
+<div class="modalContainer" *ngIf = " modalRoot === 'deleteSubcategory' "> 
+    <app-deletesubcategory
+    [datas] = "modalDatas"
+    ></app-deletesubcategory>
+</div>
+
+<div class="modalContainer" *ngIf = " modalRoot === 'createBanner' "> 
+    <app-createbanner
+    [datas] = "modalDatas"
+    ></app-createbanner>
+</div>
+
+
+<div class="modalContainer" *ngIf = " modalRoot === 'editBanner' "> 
+    <app-editbanner
+    [datas] = "modalDatas"
+    ></app-editbanner>
+</div>
+
+
+<div class="modalContainer" *ngIf = " modalRoot === 'deletebanner' "> 
+    <app-deletebanner
+    [datas] = "modalDatas"
+    ></app-deletebanner>
+</div>
+
+<div class="modalContainer" *ngIf = " modalRoot === 'editProductInfo' "> 
+    <app-editproduct
+    [datas] = "modalDatas"
+    ></app-editproduct>
+</div>
+
+<div class="modalContainer" *ngIf = " modalRoot === 'editProperties' "> 
+    <app-editproperties
+    [datas] = "modalDatas"
+    ></app-editproperties>
+</div>
+
+<div class="modalContainer" *ngIf = " modalRoot === 'deleteProduct' "> 
+    <app-deleteproduct
+    [datas] = "modalDatas"
+    ></app-deleteproduct>
+</div>
+
+<div class="modalContainer" *ngIf = " modalRoot === 'editEvent' "> 
+    <app-editevent
+    [datas] = "modalDatas"
+    ></app-editevent>
+</div>

@@ -1,0 +1,54 @@
+<div class="full-page-module">
+    <div class="countryContainer">
+
+        <div class="header">
+            <span>Les bannières</span>
+            <div class="add"
+            (click) = " openModal ('800', 'px', 'createBanner', 'Ajouter une bannière', '') "
+            >
+                <mat-icon>add</mat-icon>
+            </div>
+        </div>
+        <hr>
+
+       <div class="countriesTab">
+            <div class="bannerItem" *ngFor = "let banner of moduleState.banners; let i = index"
+            [style.background-image]=" 'url(' + baseUrl + banner.link + ')' "
+            > 
+            <div class="adminBackOverlay">
+                <div class="options">
+                    <button class="actionsButton" mat-icon-button [matMenuTriggerFor]="countryMenu" aria-label="Example icon-button with a menu">
+                        <mat-icon>more_vert</mat-icon>
+                    </button>
+    
+                    <mat-menu #countryMenu="matMenu">
+
+
+                        <button mat-menu-item 
+                        (click) = " openModal ('500', 'px', 'deletebanner', 'Supprimer ' + banner.title + ' ?', banner) "
+                        >
+                            <mat-icon>delete</mat-icon>
+                            <span>Supprimer</span>
+                        </button>
+
+                        
+
+                        
+                    </mat-menu>
+                </div>
+
+                <div class="note">
+                    {{banner.libelle}}
+                </div>
+
+                
+
+                
+                
+            </div>
+            
+        </div>
+            
+       </div>
+    </div>
+</div>

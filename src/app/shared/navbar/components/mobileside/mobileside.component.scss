@@ -1,0 +1,108 @@
+:host {
+    right: 0;
+    left: auto;
+    z-index: 500;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    transition: all 1s;
+    width: 200px;
+    background-color: #156132;
+    -webkit-box-shadow: 0 1px 9px -3px rgb(0 0 0 / 25%);
+    box-shadow: 0 1px 9px -3px rgb(0 0 0 / 25%);
+    padding: 15px;
+}
+
+.mobileNavigation {
+    .mobileLogo {
+        height: 60px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 25px;
+        img {
+            width: 120px;
+            height: auto;
+        }
+    }
+
+
+    .navMenu {
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        flex-direction: column;
+        .menu-item {
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+            outline: none;
+            width: 100%;
+
+            margin-bottom: 15px;
+            .menu-link {
+                transition: all .3s ease;
+                cursor: pointer;
+                border-radius: .42rem;
+                color: #FFFFFF;
+                font-weight: bold;
+                font-family: 'nimbus', 'arial', sans-serif;
+                font-size: 17px;
+            }
+        }
+
+        .menu-item-active {
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+            outline: none;
+
+            .menu-link {
+                transition: all .3s ease;
+                cursor: pointer;
+                border-radius: .42rem;
+                color: rgba($color: #ffffff, $alpha: .5);
+                font-weight: bold;
+                font-family: 'nimbus', 'arial', sans-serif;
+                font-size: 17px;
+            }
+        }
+    }
+
+    .bottomMenu {
+        position: absolute;
+        bottom: 15px;
+
+
+        position: absolute;
+        bottom: 15px;
+        width: 100%;
+        height: 100px;
+        
+        .topBarItem {
+            height: 30px;
+            width: 100%;
+            cursor: pointer;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            a {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+            }
+            mat-icon {
+                color: #FFFFFF;
+                margin-right: 10px;
+            }
+
+            span {
+                color: #FFFFFF;
+                font-weight: bold;
+                font-family: 'nimbus', 'arial', sans-serif;
+                font-size: 15px;
+            }
+        }
+    }
+}

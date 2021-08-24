@@ -1,0 +1,18 @@
+<span *ngIf="stateService.state && stateService.state.user && stateService.state.user.id">
+
+    <!-- default navbar for every pages -->
+    <app-navbar></app-navbar>
+  
+    <!-- router with pages -->
+    <router-outlet></router-outlet>
+  
+  </span>
+  
+  <span *ngIf="stateService.state && !stateService.state.user">
+  
+    <!-- login module -->
+    <app-authentication></app-authentication>
+  
+  </span>
+  
+  <app-loader *ngIf="!stateService.state || stateService.state.loading"></app-loader>
